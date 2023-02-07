@@ -1,9 +1,11 @@
 from flask import Flask, jsonify
 
 from backend.blockchain.blockchain import Blockchain
+from backend.pubsub import PubSub
 
 app = Flask(__name__)
 blockchain = Blockchain()
+pubsub = PubSub()
 
 for i in range(3):
     blockchain.add_block(i)
